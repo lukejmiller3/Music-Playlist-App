@@ -6,11 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    (r'^musicplaylistapp/$', 'musicplaylistapp.views.index'),
-    (r'^musicplaylistapp/$(?<muiscplaylistapp_id>\d+)/$', 'musicplaylistapp.views.muscian'),
-    (r'^musicplaylistapp/$(?<muiscplaylistapp_id>\d+)/$', 'musicplaylistapp.views.band_artists'),
-    (r'^musicplaylistapp/$(?<muiscplaylistapp_id>\d+)/$', 'musicplaylistapp.views.album'),
-    (r'^musicplaylistapp/$(?<muiscplaylistapp_id>\d+)/$'
+    (r'^$', 'musicplaylistapp.music.views.homepage'),
     # url(r'^musicplaylistapp/', include('musicplaylistapp.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
