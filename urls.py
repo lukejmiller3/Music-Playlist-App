@@ -7,6 +7,8 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     (r'^$', 'musicplaylistapp.music.views.homepage'),
+    (r'song/$', 'musicplaylistapp.music.views.song_list'),
+    #(r'song/$', 'musicplaylistapp.music.views.song_detail'),
     # url(r'^musicplaylistapp/', include('musicplaylistapp.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

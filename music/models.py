@@ -9,11 +9,15 @@ class Musician(models.Model):
     )
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     country = models.CharField(max_length=200)
+    position = models.CharField(max_legth=200)
 
 class Band_Artists(models.Model):
     name = models.CharField(max_length=200)
     members = models.ManyToManyField(Musician)
     country = models.CharField(max_length=200)
+
+    def __unicode__(self):
+        return self.name
 
 class Album(models.Model):
     title = models.CharField(max_length=100)
@@ -23,7 +27,17 @@ class Album(models.Model):
     genre = models.CharField(max_length=100)
     length = models.TimeField()
 
+    def __unicode__(self):
+        return self.title
+
 class Song(models.Model):
     title = models.CharField(max_length=200)
+    track_number = models.IntegerField()
     length = models.TimeField()
     album = models.ManyToManyField(Album)
+
+    def get_absolute_url(self):
+        return "/music/%i/" % self.id
+
+    def __unicode__(self):
+        return self.title
