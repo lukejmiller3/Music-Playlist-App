@@ -11,6 +11,14 @@ def homepage(request):
         'album': album,
     })
 
+def band_artist(request):
+    album = Album.objects.order_by('title')
+    songs = Song.objects.order_by('track_number')
+    return render_to_response('album.html',{
+        'album': album,
+        'song': song,
+    })
+
 def song_list(request):
     album = Album.objects.order_by('title')
     band_artists = Band_Artists.objects.order_by('name')

@@ -7,7 +7,9 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     (r'^$', 'musicplaylistapp.music.views.homepage'),
-    (r'song/$', 'musicplaylistapp.music.views.song_list'),
+    (r'bands_artist^$', 'musicplaylistapp.music.views.band_artist'),
+    #(r'album^$', 'musicplaylistapp.music.views.album'),
+    #(r'song/$', 'musicplaylistapp.music.views.song_list'),
     #(r'song/$', 'musicplaylistapp.music.views.song_detail'),
     # url(r'^musicplaylistapp/', include('musicplaylistapp.foo.urls')),
 
