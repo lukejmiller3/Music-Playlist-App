@@ -45,7 +45,16 @@ class Song(models.Model):
     album = models.ManyToManyField(Album)
 
     def get_absolute_url(self):
-        return "/music/%i/" % self.id
+        return "/song/%i/" % self.id
 
     def __unicode__(self):
         return self.title
+
+class NowPlaying(models.Model):
+    song = models.ForeignKey(Song)
+    playtime = models.DateTimeField(auto_now=True)
+
+    def __unicode__(self):
+        return self.song.title
+
+
