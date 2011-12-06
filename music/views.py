@@ -22,7 +22,7 @@ def band_artist(request):
 def songlist2(request):
     songs = Song.objects.order_by('title')
     return render_to_response('songlist2.html', {
-        'Song' : Song,
+        'songs' : songs,
     })
 
 
